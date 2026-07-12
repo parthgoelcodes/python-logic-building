@@ -1,24 +1,37 @@
 import random
 
-moves = ["rock","paper","scissors"]
+# Choices
+choices = {
+    "s": "Snake",
+    "w": "Water",
+    "g": "Gun"
+}
 
-while True:
-    player = input("enter your move( rock , paper , scissors ):-")
-    if player == "exit":
-        break
+print("====== Snake Water Gun Game ======")
+print("Enter:")
+print("s = Snake")
+print("w = Water")
+print("g = Gun")
 
+user = input("\nChoose (s/w/g): ").lower()
 
-    computer = random.choice(moves)
-    print("computers move:-",computer)
+if user not in choices:
+    print("❌ Invalid Choice!")
+else:
+    computer = random.choice(["s", "w", "g"])
 
-    if computer == player:
-        print("draw ")
+    print(f"\nYou chose     : {choices[user]}")
+    print(f"Computer chose: {choices[computer]}")
 
-    elif (computer == "rock" and player == "scissors") or (computer == "paper" and player == "rock") or (computer == "scissors" and player == "paper"):
-        print("💻computer won")
+    if user == computer:
+        print("🤝 It's a Draw!")
 
-    elif (computer == "scissors" and player == "rock") or (computer == "paper" and player == "scissors") or (computer == "rock" and player == "paper"):
-        print("🎮player won")
+    elif (
+        (user == "s" and computer == "w") or
+        (user == "w" and computer == "g") or
+        (user == "g" and computer == "s")
+    ):
+        print("🎉 You Win!")
 
     else:
-        print("❌invalid input")
+        print("💻 Computer Wins!")
