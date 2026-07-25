@@ -1,0 +1,93 @@
+# ===============================
+# GROCERY BILLING SYSTEM
+# ===============================
+
+items = {
+    "Rice": 60,
+    "Sugar": 45,
+    "Milk": 30,
+    "Bread": 40,
+    "Oil": 150,
+    "Tea": 220,
+    "Salt": 20,
+    "Egg": 8,
+    "Soap": 35,
+    "Biscuit": 15
+}
+
+cart = {}
+
+print("=" * 45)
+print("      GOEL KARYANA STORE")
+print("=" * 45)
+
+while True:
+    print("\nAvailable Items")
+    print("-" * 30)
+
+    for item, price in items.items():
+        print(f"{item:10} : ₹{price}")
+
+    item_name = input("\nEnter Item Name: ").title()
+
+    if item_name not in items:
+        print("Item Not Available!")
+        continue
+
+    qty = int(input("Enter Quantity: "))
+
+    if item_name in cart:
+        cart[item_name] += qty
+    else:
+        cart[item_name] = qty
+
+    choice = input("\nAdd More Items? (yes/no): ").lower()
+
+    if choice != "yes":
+        break
+
+print("\n")
+print("=" * 55)
+print("              FINAL BILL")
+print("=" * 55)
+
+grand_total = 0
+
+print(f"{'Item':12}{'Qty':>8}{'Price':>10}{'Total':>12}")
+print("-" * 55)
+
+for item, qty in cart.items():
+    price = items[item]
+    total = price * qty
+    grand_total += total
+
+    print(f"{item:12}{qty:>8}{price:>10}{total:>12}")
+
+print("-" * 55)
+
+discount = 0
+
+if grand_total >= 500:
+    discount = grand_total * 0.10
+
+final_amount = grand_total - discount
+gst = final_amount * 0.05
+net_amount = final_amount + gst
+
+print(f"Subtotal : ₹{grand_total:.2f}")
+print(f"Discount : ₹{discount:.2f}")
+print(f"GST (5%) : ₹{gst:.2f}")
+print("-" * 55)
+print(f"Net Amount : ₹{net_amount:.2f}")
+print("=" * 55)
+
+paid = float(input("Customer Paid: ₹"))
+
+if paid >= net_amount:
+    change = paid - net_amount
+    print(f"Return Amount: ₹{change:.2f}")
+else:
+    print(f"Pending Amount: ₹{net_amount-paid:.2f}")
+
+print("\nThank You For Shopping!")
+print("Visit Again 😊")
