@@ -1,0 +1,21 @@
+first = "python"
+second = " developer"
+print(first+ second)
+#-----------------------------------
+text = "python"
+#-------------------------------------
+for i in range(len(text)):
+    print(text[i])
+#--------------------------------------
+a = "        ok"
+b=" "
+print(b+a)
+#----------------------------------
+text = "dataengineering"
+result  = ""
+for i in range(len(text)):
+    if i % 2 == 0:
+        result = result + text[i]
+    else:
+         result = result + text[i].upper()                            
+print(result)
