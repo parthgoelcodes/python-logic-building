@@ -1,0 +1,20 @@
+for i in range(3):
+    a = int(input("enter your pin:"))
+    if a == 654321:
+        print("Withdrawl process started ")
+        break
+    else:
+        print("incorrect pin")
+# --------------------------------------------------
+while True:
+    bal = int(input("enter your balance:"))
+    amt = int(input("enter your amount:"))
+    if bal<amt:
+        print("insufficient balance")
+    elif amt % 100 != 0:
+        print("enter amount multiple of 100")
+    else:
+         print("withdrawl scussful")
+         remaining = bal - amt
+         print("remaining balance:",remaining)
+         break
