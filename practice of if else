@@ -1,0 +1,27 @@
+def check_age(age):
+    if age <=0:
+        print("invalid age")
+    elif age<18:
+        print("minor")
+    elif age<=59:
+        print("adult")
+    else:
+        print("senior citizen")
+
+check_age(12)
+check_age(18)
+check_age(59)
+check_age(14)
+check_age(69)
+#-------------------------------------------------
+def otp(pin):
+    if pin == 7391:
+        print("👽 Alien access granted!")
+        print()
+    else:
+        print("!!!!!!!fake alien detected!!!!!!!!")
+        print()
+otp(7391)
+otp(7491)
+otp(739555)
+otp(7491)
