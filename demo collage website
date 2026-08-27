@@ -1,0 +1,161 @@
+import tkinter as tk
+from tkinter import messagebox
+
+# Main window
+root = tk.Tk()
+root.title("JMIT College")
+root.geometry("1000x650")
+root.configure(bg="white")
+
+# ---------- Functions ----------
+
+def show_about():
+    messagebox.showinfo(
+        "About JMIT",
+        "JMIT is a technical institute offering various engineering and technology programs."
+    )
+
+def show_courses():
+    messagebox.showinfo(
+        "Courses",
+        "B.Tech CSE\nB.Tech IT\nB.Tech ECE\nB.Tech Mechanical"
+    )
+
+def show_contact():
+    messagebox.showinfo(
+        "Contact",
+        "JMIT College\nRadaur, Haryana\nEmail: info@jmit.ac.in"
+    )
+
+# ---------- Header ----------
+
+header = tk.Frame(root, bg="#12355B", height=90)
+header.pack(fill="x")
+
+title = tk.Label(
+    header,
+    text="JMIT COLLEGE",
+    font=("Arial", 28, "bold"),
+    fg="white",
+    bg="#12355B"
+)
+title.pack(pady=20)
+
+# ---------- Navigation ----------
+
+nav = tk.Frame(root, bg="#EAF2F8", height=55)
+nav.pack(fill="x")
+
+home_btn = tk.Button(
+    nav,
+    text="Home",
+    font=("Arial", 12),
+    command=lambda: messagebox.showinfo("Home", "Welcome to JMIT College!")
+)
+home_btn.pack(side="left", padx=25, pady=10)
+
+about_btn = tk.Button(
+    nav,
+    text="About",
+    font=("Arial", 12),
+    command=show_about
+)
+about_btn.pack(side="left", padx=25, pady=10)
+
+courses_btn = tk.Button(
+    nav,
+    text="Courses",
+    font=("Arial", 12),
+    command=show_courses
+)
+courses_btn.pack(side="left", padx=25, pady=10)
+
+contact_btn = tk.Button(
+    nav,
+    text="Contact",
+    font=("Arial", 12),
+    command=show_contact
+)
+contact_btn.pack(side="left", padx=25, pady=10)
+
+# ---------- Main Content ----------
+
+content = tk.Frame(root, bg="white")
+content.pack(fill="both", expand=True)
+
+welcome = tk.Label(
+    content,
+    text="Welcome to JMIT College",
+    font=("Arial", 32, "bold"),
+    fg="#12355B",
+    bg="white"
+)
+welcome.pack(pady=(70, 20))
+
+description = tk.Label(
+    content,
+    text="Learn • Innovate • Build Your Future",
+    font=("Arial", 18),
+    fg="#555555",
+    bg="white"
+)
+description.pack(pady=10)
+
+# ---------- Cards ----------
+
+cards = tk.Frame(content, bg="white")
+cards.pack(pady=45)
+
+card1 = tk.Frame(cards, bg="#F4F6F7", width=220, height=120)
+card1.pack(side="left", padx=15)
+card1.pack_propagate(False)
+
+tk.Label(
+    card1,
+    text="Engineering",
+    font=("Arial", 17, "bold"),
+    bg="#F4F6F7",
+    fg="#12355B"
+).pack(pady=35)
+
+
+card2 = tk.Frame(cards, bg="#F4F6F7", width=220, height=120)
+card2.pack(side="left", padx=15)
+card2.pack_propagate(False)
+
+tk.Label(
+    card2,
+    text="Technology",
+    font=("Arial", 17, "bold"),
+    bg="#F4F6F7",
+    fg="#12355B"
+).pack(pady=35)
+
+
+card3 = tk.Frame(cards, bg="#F4F6F7", width=220, height=120)
+card3.pack(side="left", padx=15)
+card3.pack_propagate(False)
+
+tk.Label(
+    card3,
+    text="Student Life",
+    font=("Arial", 17, "bold"),
+    bg="#F4F6F7",
+    fg="#12355B"
+).pack(pady=35)
+
+# ---------- Footer ----------
+
+footer = tk.Frame(root, bg="#12355B", height=50)
+footer.pack(fill="x", side="bottom")
+
+tk.Label(
+    footer,
+    text="© JMIT College | Student Portal",
+    font=("Arial", 11),
+    fg="white",
+    bg="#12355B"
+).pack(pady=15)
+
+# Start application
+root.mainloop()
