@@ -1,0 +1,31 @@
+student = {"name":"parth",
+           "age":34}
+print(student)
+
+#---------------------different datatype-----------------------------------
+stdnt = {"name":"parth",
+         "age":89,
+         "marks":34.5,
+         "gender":"male"}
+print(stdnt)
+
+#--------------------ACCESSING VALUES---------------------------------------
+st = {"name":"parth"}
+print(st["name"])
+print(student["age"])
+
+#-------------------ADDING NEW DATA------------------------------------------
+st = {"name":"parth"}
+st["age"] = 34
+st["nationality"] = "Indian"
+print(st)
+#-------------------CHANGING EXISTING KEY VALUES-------------------------------
+student = {"name":"parth",
+           "age":34}
+student["age"]=35
+print(student)
+#--------------------ADDING AND UPDATING DICTONARY-------------------------------
+stdnt.update({"name":"raman",
+              "nationality":"Indian"})
+print(stdnt)
+#------------------
